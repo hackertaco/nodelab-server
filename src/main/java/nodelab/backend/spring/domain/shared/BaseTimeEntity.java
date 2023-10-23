@@ -1,4 +1,4 @@
-package nodelab.backend.spring.model;
+package nodelab.backend.spring.domain.shared;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
