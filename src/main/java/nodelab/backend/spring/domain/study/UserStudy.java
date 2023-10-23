@@ -25,6 +25,8 @@ public class UserStudy extends BaseTimeEntity {
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+    @Column(nullable = false)
+    private boolean isOwner;
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "studyId")
     private Study study;
@@ -40,6 +42,7 @@ public class UserStudy extends BaseTimeEntity {
     private List<Category> interest;
     @Column(nullable = false)
     private String introduction;
+
 
     @Column
     private LocalDateTime deletedAt;
