@@ -12,18 +12,24 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import java.time.LocalDateTime;
 import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 import nodelab.backend.spring.domain.shared.BaseTimeEntity;
 import nodelab.backend.spring.domain.user.Position;
 import nodelab.backend.spring.domain.user.User;
 
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserStudy extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "userId")
     private User user;
     @Column(nullable = false)
     private boolean isOwner;
