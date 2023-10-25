@@ -2,8 +2,6 @@ package nodelab.backend.spring.domain.post;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -32,8 +30,8 @@ public class StudyInquery extends BaseTimeEntity {
 
     @Column(nullable = false)
     private String content;
-    @Column
-    @Enumerated(EnumType.STRING)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parentId")
     private StudyInquery parentId;
     @Column(nullable = false)
     private Boolean isSecret;
