@@ -1,4 +1,4 @@
-package nodelab.backend.spring.domain.study;
+package nodelab.backend.ndlab.domain.study;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,8 +13,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import nodelab.backend.spring.domain.shared.BaseTimeEntity;
+import nodelab.backend.ndlab.domain.shared.BaseTimeEntity;
 
 @Entity
 @Data
