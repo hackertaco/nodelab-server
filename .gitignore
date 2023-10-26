@@ -6,7 +6,6 @@ build/
 !**/src/test/**/build/
 pgdata
 application.properties
-docker-compose.yml
 ### STS ###
 .apt_generated
 .classpath
