@@ -1,4 +1,4 @@
-package nodelab.backend.spring.domain.user;
+package nodelab.backend.ndlab.domain.user;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,7 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import java.time.LocalDateTime;
 import lombok.NoArgsConstructor;
-import nodelab.backend.spring.domain.shared.BaseTimeEntity;
+import nodelab.backend.ndlab.domain.shared.BaseTimeEntity;
 
 @Entity
 @NoArgsConstructor

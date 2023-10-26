@@ -1,5 +1,6 @@
-package nodelab.backend.spring.domain.post;
+package nodelab.backend.ndlab.domain.post;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -7,16 +8,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import lombok.Data;
+import java.time.LocalDateTime;
 import lombok.NoArgsConstructor;
-import nodelab.backend.spring.domain.study.Study;
-import nodelab.backend.spring.domain.user.User;
-import nodelab.backend.spring.domain.shared.BaseTimeEntity;
+import nodelab.backend.ndlab.domain.study.Study;
+import nodelab.backend.ndlab.domain.user.User;
+import nodelab.backend.ndlab.domain.shared.BaseTimeEntity;
 
 @Entity
-@Data
 @NoArgsConstructor
-public class Bookmark extends BaseTimeEntity {
+public class StudyPost extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,6 +27,13 @@ public class Bookmark extends BaseTimeEntity {
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "studyId")
     private Study study;
+    @Column(nullable = false)
+    private String title;
+    @Column(nullable = false)
+    private String content;
+    @Column(nullable = false)
+    private Boolean isNotice;
 
-
+    @Column
+    private LocalDateTime deletedAt;
 }

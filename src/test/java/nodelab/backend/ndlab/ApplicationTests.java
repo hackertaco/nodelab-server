@@ -1,4 +1,4 @@
-package nodelab.backend.spring;
+package nodelab.backend.ndlab;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

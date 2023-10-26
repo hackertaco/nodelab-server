@@ -1,4 +1,4 @@
-package nodelab.backend.spring.domain.user;
+package nodelab.backend.ndlab.domain.user;
 
 public enum OAuthProvider {
     GOOGLE,

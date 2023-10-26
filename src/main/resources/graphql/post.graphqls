@@ -1,0 +1,23 @@
+type Bookmark {
+    id:ID!
+    user: User!
+    study: Study!
+}
+type StudyInquery {
+    id:ID!
+    user: User!
+    study: Study!
+    content: String!
+    parentId: ID
+    isSecret:Boolean!
+    deletedAt: String
+}
+type StudyPost {
+    id:ID!
+    user: User!
+    study: Study!
+    title: String!
+    content: String!
+    isNotice:Boolean!
+    deletedAt: String
+}

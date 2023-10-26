@@ -1,4 +1,4 @@
-package nodelab.backend.spring.domain.user;
+package nodelab.backend.ndlab.domain.user;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,8 +12,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import nodelab.backend.spring.domain.shared.BaseTimeEntity;
-import nodelab.backend.spring.domain.study.Category;
+import nodelab.backend.ndlab.domain.shared.BaseTimeEntity;
+import nodelab.backend.ndlab.domain.study.Category;
 
 @Entity
 @NoArgsConstructor

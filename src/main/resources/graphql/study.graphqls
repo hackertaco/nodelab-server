@@ -1,0 +1,58 @@
+type Study {
+    id: ID!
+    state: String!
+    title: String!
+    imgUrl: String
+    category: String!
+    startDay: String!
+    endDay: String!
+    peopleLimit: Int
+    division:String!
+    deletedAt: String!
+    introductionTitle: String!
+    introductionContent: String!
+}
+type Tag {
+    id: ID!
+    name: String!
+}
+
+type StudyTag {
+    id: ID!
+    study: Study
+    tag: Tag
+
+}
+
+type UserStudy {
+    id: ID!
+    study: Study
+    user: User
+    requestStatus: String!
+    position: String!
+    achievementRate: Int!
+    interest: [String!]!
+    introduction: String!
+    deletedAt: String!
+}
+
+type Query {
+    getAllStudy: [Study]
+    getAStudy(id:ID!):Study
+}
+
+type Mutation {
+    createStudy(input: CreateStudyInputDto!, userId: ID!): Study
+}
+
+input CreateStudyInputDto {
+    title: String!
+    imgUrl: String
+    category: String!
+    startDay: String!
+    endDay: String!
+    peopleLimit: Int!
+    division: String!
+    introductionTitle: String!
+    introductionContent: String!
+}

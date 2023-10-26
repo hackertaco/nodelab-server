@@ -1,4 +1,4 @@
-package nodelab.backend.spring.domain.study;
+package nodelab.backend.ndlab.domain.study;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -9,7 +9,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import nodelab.backend.spring.domain.shared.BaseTimeEntity;
+import nodelab.backend.ndlab.domain.shared.BaseTimeEntity;
 
 @Entity
 @Data

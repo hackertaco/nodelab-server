@@ -1,4 +1,4 @@
-package nodelab.backend.spring.domain.study;
+package nodelab.backend.ndlab.domain.study;
 
 public enum RequestStatus {
     READY,
