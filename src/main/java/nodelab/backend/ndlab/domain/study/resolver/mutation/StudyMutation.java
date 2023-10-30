@@ -10,12 +10,13 @@ import nodelab.backend.ndlab.domain.study.model.StudyCreateDTO;
 import nodelab.backend.ndlab.domain.study.service.StudyService;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 
 @Slf4j
 @Validated
-@Controller
+@Component
 @RequiredArgsConstructor
 public class StudyMutation implements GraphQLMutationResolver {
     private final StudyService studyService;
