@@ -43,8 +43,6 @@ public class UserStudy extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private Position position;
     @Column(nullable = false)
-    private int achievementRate;
-    @Column(nullable = false)
     private List<Category> interest;
     @Column(nullable = false)
     private String introduction;

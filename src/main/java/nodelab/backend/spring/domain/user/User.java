@@ -1,17 +1,22 @@
 package nodelab.backend.spring.domain.user;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import nodelab.backend.spring.domain.post.Bookmark;
 import nodelab.backend.spring.domain.shared.BaseTimeEntity;
 import nodelab.backend.spring.domain.study.Category;
 
@@ -37,10 +42,10 @@ public class User extends BaseTimeEntity {
     private List<Category> interest;
     @Column
     private Position position;
-    @Column(nullable = false)
-    private int avgAchievementRate;
     @Column
     private String githubUrl;
+    @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Bookmark> bookmarks = new ArrayList<>();
     @Column
     private LocalDateTime deletedAt;
 
