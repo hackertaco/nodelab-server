@@ -20,9 +20,9 @@ public class StudyTag extends BaseTimeEntity {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "study_id")
+    @JoinColumn(name = "studyId")
     private Study study;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name ="tag_id")
+    @JoinColumn(name ="tagId")
     private Tag tag;
 }
