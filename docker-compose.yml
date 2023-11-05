@@ -14,12 +14,16 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=nodelab
       - POSTGRES_HOST=db
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
   backend:
     build:
       context: .
       dockerfile: Dockerfile
-
     ports:
       - "8010:8010"
     depends_on:
       - db
+volumes:
+  postgres-data:
+

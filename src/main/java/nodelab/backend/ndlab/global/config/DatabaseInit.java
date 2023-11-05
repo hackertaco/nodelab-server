@@ -1,6 +1,5 @@
 package nodelab.backend.ndlab.global.config;
 
-import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import nodelab.backend.ndlab.domain.study.Category;
@@ -22,7 +21,6 @@ public class DatabaseInit implements ApplicationRunner {
                 .nickname("admin")
                 .level(1)
                 .interest(List.of(Category.DATABASE, Category.ANDROID))
-                .avgAchievementRate(20)
                 .position(Position.DATABASE)
                 .introduction("안녕하세요 샘플입니다.")
                 .build();
