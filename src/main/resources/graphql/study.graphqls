@@ -42,10 +42,10 @@ type Query {
 }
 
 type Mutation {
-    createStudy(input: CreateStudyInputDto!, userId: ID!): Study
+    createStudy(input: CreateStudyInput!, userId: ID!): Study
 }
 
-input CreateStudyInputDto {
+input CreateStudyInput {
     title: String!
     imgUrl: String
     category: String!
@@ -55,4 +55,6 @@ input CreateStudyInputDto {
     division: String!
     introductionTitle: String!
     introductionContent: String!
+    postTitle: String
+    postContent: String
 }
