@@ -30,19 +30,31 @@ type UserStudy {
     user: User
     requestStatus: String!
     position: String!
-    achievementRate: Int!
     interest: [String!]!
     introduction: String!
     deletedAt: String!
 }
-
+type GetAllStudyDto {
+    id: ID!
+    title: String!
+    imgUrl: String
+    category: String!
+    peopleLimit: Int
+    division:String!
+    studyTag: [StudyTag]
+    isBookmarked: Boolean!
+    studyInqueryCount: Int!
+    applicationCount: Int!
+}
 type Query {
     getAllStudy: [Study]
     getAStudy(id:ID!):Study
+    getAllStudyByStartDay(id:ID!):[GetAllStudyDto]
 }
 
 type Mutation {
     createStudy(input: CreateStudyInput!, userId: ID!): Study
+    createInquiry(input: InquiryCreateDTO!, userId: ID!, studyId: ID!): StudyInquiry
 }
 
 input CreateStudyInput {
