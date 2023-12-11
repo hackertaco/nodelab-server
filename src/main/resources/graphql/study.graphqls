@@ -55,6 +55,7 @@ type Query {
 type Mutation {
     createStudy(input: CreateStudyInput!, userId: ID!): Study
     createInquiry(input: InquiryCreateDTO!, userId: ID!, studyId: ID!): StudyInquiry
+    applyStudy(input: ApplyUserStudyInput, userId: ID!, studyId: ID!): UserStudy
 }
 
 input CreateStudyInput {
@@ -69,4 +70,10 @@ input CreateStudyInput {
     introductionContent: String!
     postTitle: String
     postContent: String
+}
+
+input ApplyUserStudyInput {
+    position:String!
+    interest: [String!]
+    introduction: String!
 }

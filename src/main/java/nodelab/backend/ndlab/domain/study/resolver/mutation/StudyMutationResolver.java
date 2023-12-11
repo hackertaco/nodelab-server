@@ -5,7 +5,9 @@ import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import nodelab.backend.ndlab.domain.study.Study;
+import nodelab.backend.ndlab.domain.study.UserStudy;
 import nodelab.backend.ndlab.domain.study.model.StudyCreateDTO;
+import nodelab.backend.ndlab.domain.study.model.UserStudyApplyDTO;
 import nodelab.backend.ndlab.domain.study.service.StudyService;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
@@ -24,5 +26,13 @@ public class StudyMutationResolver implements GraphQLMutationResolver {
                              @Argument(name = "userId") Long userId) {
         log.info("Creating study for {}", input);
         return studyService.createStudy(input, userId);
+    }
+
+    @MutationMapping(name = "applyStudy")
+    public UserStudy applyStudy(@Valid @Argument(name = "input") UserStudyApplyDTO input,
+                                @Argument(name = "userId") Long userId,
+                                @Argument(name = "studyId") Long studyId) {
+        log.info("Creating userStudy {}", input);
+        return studyService.applyStudy(input, userId, studyId);
     }
 }
